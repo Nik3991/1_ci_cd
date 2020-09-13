@@ -15,4 +15,4 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-  - curl -f -T ci_cd-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -unik3991:${BINTRAY_API_KEY} "https://api.bintray.com/content/nik3991/otus_p/homework/${TRAVIS_BUILD_NUMBER}/ci_cd-0.0.${TRAVIS_BUILD_NUMBER}-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -f -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -unik3991:${BINTRAY_API_KEY} "https://api.bintray.com/content/nik3991/otus_p/homework/${TRAVIS_BUILD_NUMBER}/helloworld-0.0.${TRAVIS_BUILD_NUMBER}-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"

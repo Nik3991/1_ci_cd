@@ -4,7 +4,7 @@ if (NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
     set(ENV{TRAVIS_BUILD_NUMBER} 1)
 endif()
 
-project(ci_cd VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 if (WIN32)
     find_package(BOOST COMPONENTS unit_test_framework REQUIRED)
@@ -25,10 +25,10 @@ configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
 add_library(lib lib.cpp)
 
-add_executable(ci_cd main.cpp)
+add_executable(helloworld main.cpp)
 add_executable(test_version test_version.cpp)
 
-set_target_properties(lib ci_cd test_version PROPERTIES
+set_target_properties(lib helloworld test_version PROPERTIES
         CXX_STANDART 17
         CXX_STANDART_REQUIRED ON
 if (NOT WIN32)
@@ -42,11 +42,11 @@ set_target_properties(test_version PROPERTIES
 )
 
 target_link_libraries (test_version lib ${Boost_LIBRARIES})
-target_link_libraries (ci_cd lib)
+target_link_libraries (helloworld lib)
 
 #---------------------------
 
-install (TARGETS ci_cd RUNTIME DESTINATION bin)
+install (TARGETS helloworld RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 

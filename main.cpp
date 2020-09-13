@@ -1,9 +1,11 @@
 #include <iostream>
+#include "version.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!!!!!!" << endl;
+    cout << "build " << version() << endl;
+    cout << "Hello, World!" << endl;
     return 0;
 }
